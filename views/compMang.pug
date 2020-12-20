@@ -1,0 +1,29 @@
+mixin table(list1)
+ 
+    table.table
+        thead
+            tr
+                th(scope='col') DIN Number
+                th(scope='col') Director Name
+                th(scope='col') ISIN Code 
+        tbody
+            tr
+                td #{ list1.DIN }
+                td #{ list1.DirectorName }
+                td #{ list1.ISIN }
+
+doctype html
+html
+    head
+        title Company Management
+        link(rel="stylesheet" href="/bootstrap/bootstrap.css")
+    body
+        style.
+            .tit{
+                text-align:center;
+            }
+        include navbar
+        h1( style="text-align:center;" ) Company Management
+        - var dirList
+        each val in dirList
+            +table(val)

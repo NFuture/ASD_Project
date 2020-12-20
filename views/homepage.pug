@@ -1,0 +1,16 @@
+html
+  head
+    title= title
+    link(rel="stylesheet" href="/bootstrap/bootstrap.css")
+  body
+    include navbar
+    h1= message
+    - var values
+    - var n = 0
+    ul
+      each val in values
+        li(style="text-align:center;")
+          - var url = '/:'+ values[n]
+          - n = n+1  
+          a(href=url )= val
+          br

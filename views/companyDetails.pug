@@ -1,0 +1,36 @@
+mixin table(list1)
+
+    style.
+        .tit{
+            text-aling:center;
+        } 
+    table.table
+        tbody
+            tr
+                td #{ list1.ISIN }
+                td #{ list1.Sector }
+            tr
+                td #{ list1.BOM_CODE }
+                td #{ list1.Ticker_Symbol }
+
+
+doctype html 
+html
+    head
+        style.
+            .tit{
+                text-align:center;
+            }
+        title Hello
+        link(rel="stylesheet" href="/bootstrap/bootstrap.css") 
+    body
+        style.
+            .tit{
+                text-align:center;
+            }
+        - var listComp
+        include navbar
+        h1(class="tit") Company Details
+        each val in listComp
+            h2( class="tit")= val.compName
+            +table(val)
